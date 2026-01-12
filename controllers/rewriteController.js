@@ -1,3 +1,5 @@
+import dotenv from "dotenv";
+dotenv.config();
 import OpenAI from "openai";
 
 const client = new OpenAI({
@@ -35,7 +37,7 @@ Return ONLY the rewritten message.
 `.trim();
 
     const response = await client.responses.create({
-      model: "gpt-5.2-mini",
+      model: "gpt-5-nano",
       input: [
         { role: "system", content: instruction },
         { role: "user", content: text },
